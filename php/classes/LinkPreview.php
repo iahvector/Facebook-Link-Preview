@@ -172,7 +172,7 @@ class LinkPreview
 
             $description = strip_tags($description);
 
-            $answer = array("title" => $title, "url" => $finalLink, "pageUrl" => $finalUrl, "canonicalUrl" => Url::canonicalPage($pageUrl), "description" => $description,
+            $answer = array("text" => $text, "title" => $title, "url" => $finalLink, "pageUrl" => $finalUrl, "canonicalUrl" => Url::canonicalPage($pageUrl), "description" => $description,
                 "images" => $images, "video" => $video, "videoIframe" => $videoIframe);
 
             $result_json = Json::jsonSafe($answer, $header);
@@ -191,7 +191,7 @@ class LinkPreview
             }
 
             if ($flagged) {
-                $answer = array("title" => $title, "url" => $finalLink, "pageUrl" => $finalUrl, "canonicalUrl" => Url::canonicalPage($pageUrl), "description" => $description,
+                $answer = array("text" => $text, "title" => $title, "url" => $finalLink, "pageUrl" => $finalUrl, "canonicalUrl" => Url::canonicalPage($pageUrl), "description" => $description,
                     "images" => $images, "video" => $video, "videoIframe" => $videoIframe);
                 return Json::jsonSafe($answer, $header);
             } else {
